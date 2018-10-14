@@ -91,7 +91,7 @@ void MessageOpenAction::Execute( aui_Control *control, uint32 action, uint32 dat
 
 	MBCHAR const *  wavName = message->AccessData()->GetMsgOpenSound();
 	if (wavName)
-    {
+	{
 		MBCHAR filename[_MAX_PATH];
 		g_civPaths->FindFile(C3DIR_SOUNDS, wavName, filename);
 #ifdef __linux__
@@ -100,7 +100,7 @@ void MessageOpenAction::Execute( aui_Control *control, uint32 action, uint32 dat
 #else				
 		PlaySound(filename, NULL, SND_ASYNC | SND_FILENAME);
 #endif
-}
+	}
 }
 
 

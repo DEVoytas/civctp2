@@ -279,7 +279,7 @@ int messagewin_CreateModalMessage(Message data)
 #else				
 			PlaySound(filename, NULL, SND_ASYNC | SND_FILENAME);
 #endif
-	}
+        }
 	}
 
 	return 1;
