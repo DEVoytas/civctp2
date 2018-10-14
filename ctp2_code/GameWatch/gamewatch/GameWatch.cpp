@@ -4,6 +4,10 @@
 
 #include "GameWatch/gamewatch/GWDelivery.h"
 #include "GameWatch/gamewatch/GWRecorder.h"
+#ifdef __linux__
+#include "../../ctp/cifm.h"
+#define fopen(a, b) ci_fopen(a, b)
+#endif
 
 DllExport GameWatch gameWatch;
 

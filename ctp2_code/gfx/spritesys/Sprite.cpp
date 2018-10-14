@@ -29,7 +29,6 @@
 // - Added size argument to Set*Data methods for increasing portability
 //
 //----------------------------------------------------------------------------
-
 #include "ctp/c3.h"
 #include "gfx/spritesys/Sprite.h"
 

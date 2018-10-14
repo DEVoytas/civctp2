@@ -28,6 +28,7 @@
 // - Removed unused local variables. (Sep 9th 2005 Martin Gühmann)
 //
 //----------------------------------------------------------------------------
+#pragma GCC optimize 2
 
 #include "ctp/c3.h"
 

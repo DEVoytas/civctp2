@@ -61,7 +61,7 @@ public:
 
 	~MapGrid()
 	{
-		s_scratch.resize(0);
+		//s_scratch.resize(0);
 	}
 
 	void Resize(const sint32 & xSize,

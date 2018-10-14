@@ -46,6 +46,7 @@
 #include "gs/gameobj/Unit.h"
 #include "gfx/gfx_utils/pixeltypes.h"
 #include "gs/database/profileDB.h"
+#include "colorset.h"	// COLOR
 
 enum C3_RADAR_ACTION {
 	C3_RADAR_ACTION_NULL,
@@ -55,7 +56,7 @@ enum C3_RADAR_ACTION {
 class aui_Surface;
 class MapPoint;
 class Player;
-enum COLOR;
+//enum COLOR;
 
 class RadarMap : public aui_Control, public PatternBase
 {

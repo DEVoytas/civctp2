@@ -3,6 +3,7 @@
 
 #include "gs/utility/Globals.h"        // allocated::...
 #include "ui/aui_ctp2/SelItem.h"        // g_selected_item
+#include "soundmanager.h" // g_soundManager
 
 #include "ui/aui_common/aui.h"
 #include "ui/aui_ctp2/c3ui.h"
@@ -249,8 +250,11 @@ int messagewin_CreateMessage( Message data, BOOL bRecreate )
 
 			if (g_civPaths->FindFile(C3DIR_SOUNDS, wavName, filename))
             {
-#if defined(WIN32)
-			    PlaySound(filename, NULL, SND_ASYNC | SND_FILENAME);
+#ifdef __linux__
+				if (g_soundManager)
+					g_soundManager->PlaySound(filename, false);
+#else				
+				PlaySound(filename, NULL, SND_ASYNC | SND_FILENAME);
 #endif
             }
 		}
@@ -263,15 +267,17 @@ int messagewin_CreateMessage( Message data, BOOL bRecreate )
 int messagewin_CreateModalMessage(Message data)
 {
 	messagemodal_CreateModalMessage(data);
-
 	MBCHAR const *  wavName = data.AccessData()->GetMsgSound();
 	if (wavName)
     {
 		MBCHAR filename[ _MAX_PATH ];
 		if (g_civPaths->FindFile( C3DIR_SOUNDS, wavName, filename))
         {
-#if defined(WIN32)
-		    PlaySound(filename, NULL, SND_ASYNC | SND_FILENAME);
+#ifdef __linux__
+			if (g_soundManager)
+				g_soundManager->PlaySound(filename, false);
+#else				
+			PlaySound(filename, NULL, SND_ASYNC | SND_FILENAME);
 #endif
         }
 	}

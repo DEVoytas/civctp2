@@ -27,7 +27,7 @@
 //
 // - Repaired memory leaks.
 // - Display the main thread function name in the debugger.
-// - Initialized local variables. (Sep 9th 2005 Martin Gühmann)
+// - Initialized local variables. (Sep 9th 2005 Martin Gï¿½hmann)
 //
 //----------------------------------------------------------------------------
 
@@ -226,7 +226,7 @@ void NetThread::Run()
 #endif
 
 	while (!m_exit) {
-		std::this_thread::sleep_for(std::chrono::microseconds(100));
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
 		if(m_anet) {
 			if(m_dp) {

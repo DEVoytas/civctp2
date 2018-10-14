@@ -116,12 +116,19 @@
 
 #if defined(__GNUC__)
 #define _MAX_PATH PATH_MAX
+
 #endif // __GNUC__
 
 #if defined(__cplusplus)
 #include "ctp/ctp2_utils/c3debug.h"
 #include "ctp/ctp2_utils/c3errors.h"
 #include "ui/aui_common/aui.h"
+#endif
+
+#ifdef __linux__
+// try to handle Case insisentive stuff globaly here
+#include "cifm.h"
+#define fopen(a, b) ci_fopen(a, b)
 #endif
 
 #endif // __C3_H__

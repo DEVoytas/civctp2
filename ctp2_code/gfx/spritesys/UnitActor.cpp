@@ -37,18 +37,18 @@
 // - Prevented crashes due to uninitialised members.
 // - Prevented some NULL-dereferencing crashes.
 // - Exposed city walls and force field graphics to agecitystyle.txt,
-//   by Martin Gühmann.
+//   by Martin Ghmann.
 // - Prevented crashes with invalid (i.e. killed or destroyed) units.
 // - PFT 29 mar 05, show # turns until city next grows a pop.
 // - Removed refferences to the civilisation database. (Aug 20th 2005 Martin
-// Gühmann)
-// - Removed unnecessary include files. (Aug 28th 2005 Martin Gühmann)
-// - Initialized local variables. (Sep 9th 2005 Martin Gühmann)
-// - Removed unused local variables. (Sep 9th 2005 Martin Gühmann)
+// Ghmann)
+// - Removed unnecessary include files. (Aug 28th 2005 Martin Ghmann)
+// - Initialized local variables. (Sep 9th 2005 Martin Ghmann)
+// - Removed unused local variables. (Sep 9th 2005 Martin Ghmann)
 // - Fixed memory leaks.
 // - added Hidden Nationality check for units 2-21-2007
 // - Added Civilization flag MAPICONS
-// - Added MapIcon database (3-Mar-2007 Martin Gühmann)
+// - Added MapIcon database (3-Mar-2007 Martin Ghmann)
 // - Implemented but then outcomment DrawCityImps just didn't come out right
 //   maybe revisit
 // - Made DrawStackingIndicator only the stack sized moved the rest to
@@ -56,7 +56,7 @@
 // - Made StackingIndicator above the healthbar per Maquiladora's design
 // - Move Civ flag underneath the healthbar.
 // - Unit stacking indications and special indecations are placed according
-//   their size. (9-Feb-2008 Martin Gühmann)
+//   their size. (9-Feb-2008 Martin Ghmann)
 // - Made the elite icon replace the veteran icon, rather than sit below it.
 //	 (11-Apr-2009 Maq)
 // - Stopped the cargo icon showing for enemy transports if they're only
@@ -1544,16 +1544,16 @@ void UnitActor::DrawHealthBar(void) {
   double ratio;
   if (m_unitID.IsValid()) {
     if (stackSize > 1 && myCell->GetNumUnits()) {
-      ratio = std::max(0.0, myCell->UnitArmy()->GetAverageHealthPercentage());
+      ratio = std::max<double>(0.0, myCell->UnitArmy()->GetAverageHealthPercentage());
     } else {
       if (m_healthPercent < 0) {
-        ratio = std::max(0.0, m_unitID.GetHP() / m_unitID->CalculateTotalHP());
+        ratio = std::max<double>(0.0, m_unitID.GetHP() / m_unitID->CalculateTotalHP());
       } else {
         ratio = 0.0;  // m_healthPercent;
       }
     }
   } else {
-    ratio = std::max(0.0, m_healthPercent);
+    ratio = std::max<double>(0.0, m_healthPercent);
   }
 
   POINT iconDim = tileSet->GetMapIconDimensions(MAPICON_HERALD);

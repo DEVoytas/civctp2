@@ -7,6 +7,7 @@
 #include <memory>
 
 #include "ui/aui_common/aui_action.h"
+#include "GameOver.h"
 
 class Sequence;
 enum GAME_OVER;

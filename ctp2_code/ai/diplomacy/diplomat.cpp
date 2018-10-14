@@ -116,6 +116,11 @@
 #include "net/general/net_diplomacy.h"
 #include "gs/utility/RandGen.h"            // g_rand
 
+#ifdef __linux__
+#include "../ctp/cifm.h"
+#define fopen(a, b) ci_fopen(a, b)
+#endif
+
 extern sint32 g_saveFileVersion;
 
 namespace
