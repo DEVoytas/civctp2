@@ -1,20 +1,59 @@
-*.o
-*.orig
-*.rej
-Makefile.in
+# Compiled Object files
+*.slo
 *.lo
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
 *.la
-*.dirstamp
-.libs
-.deps
-GNUmakefile
-GNUmakefile.in
-Makefile
-aclocal.m4
-autom4te.cache/
-config.log
-config.status
-configure
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+#Visual Studio files
+*.[Oo]bj
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.opensdf
+*.pyc
+ipch/
+obj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+*.VC.db
+*.VC.opendb
+.vs/
+gen/
+vs-chromium-project.txt
+
+# Gen
 ctp2_code/gs/dbgen/ctpdb
 ctp2_code/gs/dbgen/lex.yy.c
 ctp2_code/gs/dbgen/y.output
@@ -241,6 +280,54 @@ ctp2_code/ui/ldl/ldl.output
 ctp2_code/ui/ldl/ldl.tab.c
 ctp2_code/ui/ldl/ldl.tab.h
 ctp2_code/ui/ldl/lex.ldl.c
+
+# Build
+ctp2_code/mapgen/Crater_0/
+ctp2_code/mapgen/Crater__/
+ctp2_code/mapgen/fault__0/
+ctp2_code/mapgen/fault___/
+ctp2_code/mapgen/geometr0/
+ctp2_code/mapgen/geometri/
+
+# Data
+ctp2_data/
+Scenarios/
+save/
+help/
+rsrc/
+ctp2_code/ctp/dipcombo.txt
+ctp2_code/ctp/userprofile.txt
+
+# Configs
+ctp2_code/ctp/netf.def
+ctp2_code/ctp/nsgame.cfg
+ctp2_code/ctp/nsplayer.cfg
+ctp2_code/ctp/nstrnsprt.cfg
+
+# Logs
+logs/
+ctp2_code/ctp/eventcb.txt
+ctp2_code/ctp/eventlog.txt
+ctp2_code/ctp/ldlparselog.txt
+ctp2_code/ctp/slicdbg.txt
+ctp2_code/ctp/usercritmsgs.txt
+ctp2_code/ctp/CTP_LEAKS*
+
+# Other
+*.orig
+*.rej
+Makefile.in
+*.dirstamp
+.libs
+.deps
+GNUmakefile
+GNUmakefile.in
+Makefile
+aclocal.m4
+autom4te.cache/
+config.log
+config.status
+configure
 libtool
 ctp2_code/libs/freetype-1.3.1/compile
 ctp2_code/libs/freetype-1.3.1/ft_conf.h
