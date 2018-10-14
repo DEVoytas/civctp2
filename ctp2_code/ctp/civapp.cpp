@@ -278,10 +278,8 @@
 #include "GWCiv.h"
 #endif
 
-#ifdef LINUX
-#include <time.h>
-#include <unistd.h>
-#endif
+#include <thread>
+#include <chrono>
 
 extern ScreenManager *          g_screenManager;
 extern OzoneDatabase            *g_theUVDB;
@@ -566,16 +564,7 @@ namespace Os
 
 	void Sleep(uint32 milliSeconds)
 	{
-#ifdef HAVE_UNISTD_H
-		usleep(milliSeconds*1000);
-#elif defined(WIN32)
-		::Sleep(milliSeconds);
-#elif defined(LINUX)
-		struct timespec backgroundSleepTime;
-		backgroundSleepTime.tv_sec  = 0;
-		backgroundSleepTime.tv_nsec = 1000000 * milliSeconds;
-		nanosleep(&backgroundSleepTime, NULL);
-#endif
+		std::this_thread::sleep_for(std::chrono::milliseconds(milliSeconds));
 	}
 } // namespace Os
 

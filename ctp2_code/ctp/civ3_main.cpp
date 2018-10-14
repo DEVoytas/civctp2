@@ -177,7 +177,7 @@
 #include <X11/Xlib.h>
 #endif
 #ifdef USE_GTK
-#include <gtk/gtk.h>
+#include <gtk-3.0/gtk/gtk.h>
 #endif
 
 #if defined(_DEBUG)
@@ -1584,13 +1584,12 @@ int WINAPI CivMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 		}
 	}
 #endif
+#ifdef USE_GTK
+	gtk_init(&iCmdShow, &pSzCmdLine);
+#endif
 
 	appstrings_Initialize();
 
-#ifdef USE_GTK
-//	gtk_set_locale();
-	gtk_init(&iCmdShow, &pSzCmdLine);
-#endif
 	std::setlocale(LC_COLLATE, appstrings_GetString(APPSTR_LOCALE));
 	std::setlocale(LC_NUMERIC, "C");
 
