@@ -28,9 +28,9 @@
 //
 //----------------------------------------------------------------------------
 
-#include "c3.h"
+#include "ctp/c3.h"
 
-#include "tiffutils.h"
+#include "gfx/gfx_utils/tiffutils.h"
 #include <tiffio.h>
 #ifndef __linux__
 #define CI_FixName(a) a

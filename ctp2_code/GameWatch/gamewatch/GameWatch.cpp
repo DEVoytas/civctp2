@@ -1,9 +1,9 @@
-#include "GameWatch.h"
+#include "GameWatch/gamewatch/GameWatch.h"
 
 #include <winbase.h>
 
-#include "GWDelivery.h"
-#include "GWRecorder.h"
+#include "GameWatch/gamewatch/GWDelivery.h"
+#include "GameWatch/gamewatch/GWRecorder.h"
 #ifdef __linux__
 #include "../../ctp/cifm.h"
 #define fopen(a, b) ci_fopen(a, b)

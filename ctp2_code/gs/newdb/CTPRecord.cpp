@@ -30,13 +30,13 @@
 //
 //----------------------------------------------------------------------------
 
-#include "c3.h"
-#include "CTPRecord.h"
+#include "ctp/c3.h"
+#include "gs/newdb/CTPRecord.h"
 
-#include "CTPDatabase.h"
-#include "DBLexer.h"
-#include "DBTokens.h"
-#include "StrDB.h"
+#include "gs/newdb/CTPDatabase.h"
+#include "gs/newdb/DBLexer.h"
+#include "gs/newdb/DBTokens.h"
+#include "gs/database/StrDB.h"
 
 #if !defined(HAVE_STATIC_CONST_INIT_DECL_BUG)
 sint32 const CTPRecord::INDEX_INVALID   = -1;
