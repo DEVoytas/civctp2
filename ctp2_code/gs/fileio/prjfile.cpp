@@ -32,26 +32,26 @@
 #endif
 struct ZFS_RENTRY {
     char      rname[MAX_RECORDNAME_LENGTH];
-    int32_t   offset;
-    int32_t   rnum;
-    int32_t   size;
-    int32_t   time;
-    int32_t   flags;
+    uint32_t  offset;
+    uint32_t  rnum;
+    uint32_t  size;
+    uint32_t  time;
+    uint32_t  flags;
 };
 
 struct ZFS_DTABLE {
-    int32_t       next_dtable;
+    uint32_t      next_dtable;
     ZFS_RENTRY    rentry[MAX_ENTRIES_PER_TABLE];
 };
 
 struct ZFS_FHEADER {
     char      filetag[4];
-    int32_t   version;
-    int32_t   max_recordname_length;
-    int32_t   max_entries_per_table;
-    int32_t   num_rentries;
-    int32_t   encrypt_key;
-    int32_t   dtable_head;
+    uint32_t  version;
+    uint32_t  max_recordname_length;
+    uint32_t  max_entries_per_table;
+    uint32_t  num_rentries;
+    uint32_t  encrypt_key;
+    uint32_t  dtable_head;
 };
 #ifdef __linux__
 #pragma pack(pop, 0)
