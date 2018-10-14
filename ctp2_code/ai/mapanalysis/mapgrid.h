@@ -62,8 +62,6 @@ public:
 	~MapGrid()
 	{
 		//s_scratch.resize(0);
-
-		//m_values.free();	// no free in valarray, and this is not really needed anyway
 	}
 
 	void Resize(const sint32 & xSize,
