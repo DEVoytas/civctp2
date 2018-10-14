@@ -20,12 +20,16 @@
 #include <unistd.h>
 #endif
 #endif // !WIN32
+#include <stdint.h>
 
 #include "gs/fileio/CivPaths.h"       // g_civPaths
 
 #define MAX_ENTRIES_PER_TABLE 100
 #define ZFSFLAG_DELETED 0x0001
 
+#ifdef __linux__
+#pragma pack(push, 0)
+#endif
 struct ZFS_RENTRY {
     char      rname[MAX_RECORDNAME_LENGTH];
     uint32_t  offset;
@@ -49,6 +53,9 @@ struct ZFS_FHEADER {
     uint32_t  encrypt_key;
     uint32_t  dtable_head;
 };
+#ifdef __linux__
+#pragma pack(pop, 0)
+#endif
 
 char *strcasecpy(char *out, char const * in)
 {
