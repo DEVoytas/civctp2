@@ -235,6 +235,10 @@ dp_dprintf(
 	...)						/* printf-style arguments on stack (if any) */
 {
 	va_list argptr;
+	#ifdef __GNUC__
+	va_list argptr = { 0 };
+	#else
+	#endif
 	int		atomic = FALSE;
 	int		len = 0;
 	int		writeMe;					/* Write this message? */
